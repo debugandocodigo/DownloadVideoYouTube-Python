@@ -12,12 +12,14 @@ def baixar_video(url, caminho_destino='videos'):
     if not os.path.exists(caminho_destino):
         os.makedirs(caminho_destino)
 
+
     # Baixar o vídeo
     print(f'Baixando {yt.title}...')
     video_stream.download(caminho_destino)
     print('Download concluído!')
 
 
-# Exemplo de uso
-url_do_video = 'https://www.youtube.com/watch?v=stmNWeq8hc8'
-baixar_video(url_do_video)
+if __name__ == '__main__':
+    # Obter a URL do vídeo
+    url = input('Digite a URL do vídeo: ')
+    baixar_video(url)
